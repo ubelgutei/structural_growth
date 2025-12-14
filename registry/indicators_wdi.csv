@@ -1,0 +1,18 @@
+pillar,indicator_code,indicator_name_official,source
+Demographics,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),WDI
+Demographics,SP.POP.1564.TO,"Population ages 15-64, total",WDI
+Demographics,SL.TLF.CACT.FE.ZS,"Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)",WDI
+Demographics,SP.URB.TOTL.IN.ZS,Urban population (% of total population),WDI
+Demographics,SE.SEC.ENRR,"School enrollment, secondary (% gross)",WDI
+Fiscal,DT.DOD.DSTC.ZS,Short-term debt (% of total external debt),WDI
+Fiscal,FI.RES.TOTL.MO,Total reserves in months of imports,WDI
+Investment,NE.GDI.FTOT.ZS,Gross fixed capital formation (% of GDP),WDI
+Investment,NE.GDI.FTOT.KD.ZG,Gross fixed capital formation (annual % growth),WDI
+Investment,NV.IND.MANF.ZS,"Manufacturing, value added (% of GDP)",WDI
+FDI,BX.KLT.DINV.WD.GD.ZS,"Foreign direct investment, net inflows (% of GDP)",WDI
+FDI,TX.VAL.TECH.MF.ZS,High-technology exports (% of manufactured exports),WDI
+Trade,NE.TRD.GNFS.ZS,Trade (% of GDP),WDI
+Trade,NE.CON.PRVT.ZS,Households and NPISHs final consumption expenditure (% of GDP),WDI
+Commodities,TX.VAL.FUEL.ZS.UN,Fuel exports (% of merchandise exports),WDI
+Commodities,NY.GDP.TOTL.RT.ZS,Total natural resources rents (% of GDP),WDI
+Income,NY.GDP.PCAP.KD,GDP per capita (constant 2015 US$),WDI

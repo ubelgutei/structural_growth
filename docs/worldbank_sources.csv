@@ -1,0 +1,72 @@
+source_id,code,name
+81,DSI, International Debt Statistics: DSSI
+43,WAT,Adjusted Net Savings
+11,ADI,Africa Development Indicators
+87,CCD,Country Climate and Development Report (CCDR)
+41,CPS,Country Partnership Strategy for India (FY2013 - 17)
+31,CPI,Country Policy and Institutional Assessment
+92,DDH,Disability Data Hub (DDH)
+1,DBS,Doing Business
+60,EFT,Economic Fitness
+70,EF2,Economic Fitness 2
+84,EDP,Education Policy
+12,EDS,Education Statistics
+13,ESY,Enterprise Surveys
+75,ESG,"Environment, Social and Governance (ESG) Data"
+30,ED1,Exporter Dynamics Database – Indicators at Country-Year Level
+93,FPA,FPN Datahub Archive
+88,FPN,Food Prices for Nutrition
+33,G2F,G20 Financial Inclusion Indicators
+80,GDL,Gender Disaggregated Labor Database (GDLD)
+14,GDS,Gender Statistics
+15,GEM,Global Economic Monitor
+27,GEP,Global Economic Prospects
+32,GFD,Global Financial Development
+69,RFA,Global Financial Inclusion and Consumer Protection Survey
+73,RFI,Global Financial Inclusion and Consumer Protection Survey (Internal)
+28,FDX,Global Findex database
+86,JON,Global Jobs Indicators Database (JOIN)
+34,GPE,Global Partnership for Education
+82,GPP,Global Public Procurement
+65,HPI,Health Equity and Financial Protection Indicators
+16,HNP,Health Nutrition and Population Statistics
+39,HNQ,Health Nutrition and Population Statistics by Wealth Quintile
+63,HCI,Human Capital Index
+78,IC7,ICP 2017
+90,IC2,ICP 2021
+18,IDA,IDA Results Measurement System
+89,ID4,Identification for Development (ID4D) Data
+45,IDD,Indonesia Database for Policy and Economic Research
+71,IC5,International Comparison Program (ICP) 2005
+62,ICP,International Comparison Program (ICP) 2011
+6,IDS,International Debt Statistics
+25,JOB,Jobs
+54,JED,Joint External Debt Hub
+37,LEL,LAC Equity Lab
+66,LPI,Logistics Performance Index
+19,MDG,Millennium Development Goals
+67,PF1,PEFA 2011
+68,PF6,PEFA 2016
+85,SNG,PEFA_2021_SNG
+91,CRP,PEFA_CRPFM
+79,GRP,PEFA_GRPFM
+61,PRQ,PPPs Regulatory Quality
+40,HPP,Population estimates and projections
+23,QDG,Quarterly External Debt Statistics GDDS
+22,QDS,Quarterly External Debt Statistics SDDS
+20,PSD,Quarterly Public Sector Debt
+77,RWR,Remittance Prices Worldwide (Receiving Countries)
+76,RWS,Remittance Prices Worldwide (Sending Countries)
+83,SPI,Statistical Performance Indicators (SPI)
+5,SNM,Subnational Malnutrition Database
+50,SNT,Subnational Population
+38,SNP,Subnational Poverty
+46,SDG,Sustainable Development Goals 
+35,SE4,Sustainable Energy for All
+29,GSP,The Atlas of Social Protection: Indicators of Resilience and Equity
+58,UHC,Universal Health Coverage
+57,WDA,WDI Database Archives
+59,WAC,Wealth Accounts
+2,WDI,World Development Indicators
+64,WBI,Worldwide Bureaucracy Indicators
+3,WGI,Worldwide Governance Indicators

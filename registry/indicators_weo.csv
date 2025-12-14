@@ -1,0 +1,5 @@
+pillar,indicator_code,indicator_name,source
+Fiscal,GGXWDG_NGDP,General government gross debt,IMF WEO
+Fiscal,GGXONLB_NGDP,General goverment primary net lending/borrowing,IMF WEO
+Fiscal,PCPIPCH,"Inflation, average consumer prices",IMF WEO
+Fiscal,BCA_NGDPD,Current account balance,IMF WEO

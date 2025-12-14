@@ -1,0 +1,14 @@
+worldbank:
+  sources:
+    wdi:
+      source_id: 2
+      code: WDI
+      name: World Development Indicators
+    wgi:
+      source_id: 3
+      code: WGI
+      name: Worldwide Governance Indicators
+    findex:
+      source_id: 28
+      code: FDX
+      name: Global Findex database

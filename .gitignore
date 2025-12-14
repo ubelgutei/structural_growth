@@ -1,0 +1,20 @@
+# Python virtual environments
+.venv/
+
+# Python/R build artifacts
+__pycache__/
+*.pyc
+.Rhistory
+.Rproj.user/
+
+# IDE settings
+.vscode/
+
+# Large generated datasets and outputs
+outputs/
+data_raw/
+data_clean/
+data_final/
+
+# Reports generated locally
+report.pdf

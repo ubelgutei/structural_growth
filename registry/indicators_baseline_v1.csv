@@ -1,0 +1,25 @@
+pillar,indicator_code,indicator_name,source,notes
+Demographics,SP.POP.1564.TO.ZS,Working-age population share (% of total),WDI,Core demographic capacity
+Demographics,SP.POP.1564.TO,Working-age population (level),WDI,Used to compute working-age growth
+Demographics,SP.URB.TOTL.IN.ZS,Urban population (% of total),WDI,Structural transformation proxy
+Demographics,SL.TLF.CACT.FE.ZS,Female labor force participation (%),WDI,Labor supply deepening
+
+FDI,BX.KLT.DINV.WD.GD.ZS,FDI net inflows (% of GDP),WDI,Supply-chain integration signal
+
+Investment,NV.IND.MANF.ZS,Manufacturing value added (% of GDP),WDI,Tradables and industrial depth
+Investment,NE.GDI.FTOT.ZS,Gross fixed capital formation (% of GDP),WDI,Capital deepening level
+
+Trade,NE.TRD.GNFS.ZS,Trade openness (% of GDP),WDI,Growth model openness
+Trade,NE.CON.PRVT.ZS,Household final consumption (% of GDP),WDI,Domestic-demand reliance
+
+Commodities,TX.VAL.FUEL.ZS.UN,Fuel exports (% of merchandise exports),WDI,Commodity dependence penalty
+Commodities,NY.GDP.TOTL.RT.ZS,Total natural resource rents (% of GDP),WDI,Broad commodity exposure
+
+Fiscal,FI.RES.TOTL.MO,Reserves (months of imports),WDI,External buffer / crisis resilience
+
+Fiscal,PCPIPCH,Inflation (average consumer prices),WEO,Macro stability
+Fiscal,GGXWDG_NGDP,General government gross debt (% of GDP),WEO,Sovereign solvency
+Fiscal,BCA_NGDPD,Current account balance (% of GDP),WEO,External balance
+Fiscal,GGXONLB_NGDP,Primary net lending/borrowing (% of GDP),WEO,Fiscal effort
+
+Income,NY.GDP.PCAP.KD,GDP per capita (constant 2015 US$),WDI,Development stage descriptor
