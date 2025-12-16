@@ -1,4 +1,4 @@
-# ---- Normalization helpers ----
+# Normalization helpers 
 # Purpose:
 # Convert heterogeneous macro indicators (different units/scales) into comparable inputs for scoring.
 # Output convention:
@@ -7,11 +7,8 @@
 
 library(dplyr)
 
-# ---- winsorize() ----
-# Robust outlier handling: cap the lower/upper tails of a numeric vector.
-# - With p = 0.01, values below the 1st percentile and above the 99th percentile are set to the
-#   respective cutoff values. This reduces the influence of crisis spikes, one-off data errors,
-#   and heavy-tailed distributions before standardization.
+# winsorize() 
+# outlier handling: cap the lower/upper tails of a numeric vector.
 winsorize <- function(x, p = 0.01) {
   q <- quantile(x, probs = c(p, 1 - p), na.rm = TRUE)
   x[x < q[1]] <- q[1]
@@ -19,8 +16,7 @@ winsorize <- function(x, p = 0.01) {
   x
 }
 
-# ---- normalize_indicators() ----
-# Steps (per indicator):
+# normalize_indicators()
 # 1) Winsorize the raw series (tail capping) using winsor_p
 # 2) Flip sign for indicators where "higher is worse" (bad_if_high), so all series have a consistent
 #    direction: higher => better

@@ -1,5 +1,4 @@
-# EM Breakout Nations — Structural Scoring
-# ---------------------------------------
+# Structural scoring of EM
 # Pipeline:
 # 1) Load panel (wide)
 # 2) Engineer demographic momentum features (5Y changes)
@@ -8,7 +7,7 @@
 # 5) Composite Breakout Scores (missingness-safe variants)
 # 6) Export: rankings tables, tier table (CSV + HTML), plots (heatmap + matrix)
 
-# ---- Libraries ----
+# Libraries 
 library(tidyverse)
 library(arrow)
 library(stringr)
@@ -16,20 +15,17 @@ library(scales)
 library(gt)
 library(ggrepel)
 
-# For lintr / R CMD check: avoid “no visible binding for global variable '.data'”
 utils::globalVariables(".data")
 
 setwd("research_r")
 
-# ---- Source helper functions ----
+# Source helper functions
 source("functions/normalization.R")  # winsorize(), normalize_indicators()
 source("functions/scoring.R")        # compute_pillar_scores()
 
-# If you keep tier helpers in a file, source it:
-# (Recommended: put make_tierlist() + gt_tierlist() here)
 source("functions/plots.R")
 
-# ---- Parameters ----
+# Parameters
 year_min <- 2010
 year_max <- 2024
 
@@ -42,13 +38,11 @@ z_cap  <- 3
 update_year  <- 2024
 exclude_iso3 <- c("TWN")
 
-# ---- Output folders ----
+# Output folders
 dir.create("../outputs/tables",  showWarnings = FALSE, recursive = TRUE)
 dir.create("../outputs/figures", showWarnings = FALSE, recursive = TRUE)
 
-# =============================================================================
 # 1) Load + feature engineering
-# =============================================================================
 
 panel <- read_parquet("../data_clean/panel_em_wide_baseline_v1.parquet") %>%
   filter(year >= year_min, year <= year_max)
@@ -64,9 +58,7 @@ panel <- panel %>%
   ) %>%
   ungroup()
 
-# =============================================================================
 # 2) Indicator registry + directionality
-# =============================================================================
 
 raw_indicators <- c(
   # Demographics
@@ -101,9 +93,7 @@ bad_if_high <- c(
   "NY.GDP.TOTL.RT.ZS"
 )
 
-# =============================================================================
 # 3) Normalize indicators (winsorize + sign-flip + pooled z-score)
-# =============================================================================
 
 panel_norm <- normalize_indicators(
   df = panel,
@@ -120,9 +110,7 @@ if (isTRUE(clip_z)) {
     mutate(across(all_of(z_cols), ~pmax(pmin(.x, z_cap), -z_cap)))
 }
 
-# =============================================================================
 # 4) Pillars + scoring
-# =============================================================================
 
 pillar_map <- list(
   Demographics = c("WA_CAGR_5Y_z","WA_SHARE_CHG_5Y_z","URB_CHG_5Y_z",
@@ -146,9 +134,7 @@ panel_scored_plot <- compute_pillar_scores(panel_norm_plot, pillar_map)
 pillar_cols <- paste0(names(pillar_map), "_score")
 n_pillars   <- length(pillar_cols)
 
-# =============================================================================
 # 5) Composite scores (missingness-safe)
-# =============================================================================
 
 panel_final <- panel_scored %>%
   mutate(
@@ -176,9 +162,7 @@ panel_final %>%
   ) %>%
   print()
 
-# =============================================================================
 # 6) Pick headline year (max full coverage)
-# =============================================================================
 
 coverage_by_year <- panel_final %>%
   filter(!iso3 %in% exclude_iso3) %>%
@@ -196,9 +180,7 @@ print(coverage_by_year, n = 50)
 headline_year <- max(coverage_by_year$year[coverage_by_year$n_full7 == max(coverage_by_year$n_full7)])
 cat("HEADLINE_YEAR =", headline_year, "\n")
 
-# =============================================================================
 # 7) Ranking tables (headline + update) + missing pillars
-# =============================================================================
 
 add_ranks <- function(df, score_col = "Breakout_Score_penalized") {
   df %>%
@@ -234,10 +216,8 @@ write_csv(headline_table, sprintf("../outputs/tables/exhibit1_headline_rankings_
 write_csv(update_table,   sprintf("../outputs/tables/exhibit_update_rankings_%s.csv", update_year))
 write_csv(missing_pillars_update, sprintf("../outputs/tables/exhibit_missing_pillars_%s.csv", update_year))
 
-# =============================================================================
-# 8) Tier table (CSV + HTML) — consistent ordering by Rank (no gt grouping)
-# =============================================================================
-# IMPORTANT: make_tierlist() in functions/plots.R must use FIXED commodity logic:
+# 8) Tier table (CSV + HTML)
+# IMPORTANT: make_tierlist() in functions/plots.R must use commodity logic:
 # commodity-exposed = LOW Commodities_score tail (because commodities indicators were sign-flipped).
 
 tier_headline <- make_tierlist(
@@ -256,9 +236,7 @@ tier_gt <- gt_tierlist(
 )
 gtsave(tier_gt, sprintf("../outputs/tables/exhibit_tiers_%s.html", headline_year))
 
-# =============================================================================
 # 9) Plot 1 — “Quality of Growth” Matrix
-# =============================================================================
 
 quality_df <- tier_headline %>%
   transmute(
@@ -311,9 +289,7 @@ ggsave(
   width = 10, height = 7, dpi = 300
 )
 
-# =============================================================================
 # 10) Plot 2 — Headline heatmap
-# =============================================================================
 
 make_heat_df <- function(df, pillar_report_cols) {
   df %>%
