@@ -3,7 +3,7 @@ Structural Growth of EM Nations
 </h1>
 
 <h3 align="center">
-ver.1
+v1.
 </h3>
 
 <p align="center">
@@ -17,6 +17,8 @@ ver.1
 <a href="#results">Results</a>
 •
 <a href="#project-structure">Structure</a>
+•
+<a href="#report">Report</a>
 </strong>
 </p>
 
@@ -24,30 +26,24 @@ ver.1
 
 ## Overview
 
-This repository contains an exploratory research project that focuses on applying
-Ruchir Sharma’s *“Breakout Nations”* framework on the countries listed in the MSCI Emerging Market Index.
-
-The goal is not to produce definitive rankings, but to learn how to build a reproducible 
-pipeline and to explore how structural economic indicators differ
-across emerging-market countries.
+This repository contains an exploratory research project that applies Ruchir Sharma’s Breakout Nations framework to countries in the MSCI Emerging Markets Index.
 
 The project combines:
-- Python for data collection and cleaning  
-- R for normalization, scoring, visualization, and reporting  
+- **Python** for data collection and cleaning  
+- **R** for normalization, scoring, visualization  
 
 ---
 
 ## Project status
 
-> **Version 1.**  
-> This repository represents my first attempt at building a research
-> workflow aside from my typical university assignments.
->
+> Version 1: I am planning to extend it in future iterations by incorporating equity market analysis
+(e.g. valuation measures such as P/E ratios).
+> 
 > Methodological choices are intentionally simple, and results should be interpreted as
 > illustrative rather than definitive.
 >
-> Feedback, critique, and suggestions are very welcome. I hope I find people as interested
-> in the EM markets as much as I do and looking forward to keep exploring this field.
+> Feedback, critique, and suggestions are very welcome.  
+> I hope to connect with others interested in emerging markets.
 
 ---
 
@@ -55,12 +51,12 @@ The project combines:
 
 The workflow follows a two-stage structure:
 
-1. **Python – data preparation**
-   - Pull macroeconomic indicators (e.g. World Bank WDI, IMF WEO)
+1. **Python**
+   - Pull macroeconomic indicators 
    - Harmonize country identifiers (ISO3)
    - Reshape data into a country–year panel
 
-2. **R – scoring & reporting**
+2. **R**
    - Winsorization of indicators
    - Sign adjustment for “risk” variables
    - Z-score normalization
@@ -79,7 +75,7 @@ Indicators are grouped into seven broad structural pillars:
 
 1. Demographics & labor-force dynamics  
 2. Fiscal sustainability & debt structure  
-3. Investment
+3. Investment  
 4. Foreign direct investment (FDI)  
 5. Trade & external openness  
 6. Commodity dependence  
@@ -93,7 +89,7 @@ Indicators are grouped into seven broad structural pillars:
 - Pillar scores are simple averages of available indicators.
 - The composite score is an average across available pillars.
 
-These choices are simplifying assumptions and are not claimed to be optimal.
+These choices are **simplifying assumptions** and are not claimed to be optimal.
 
 ---
 
@@ -103,7 +99,16 @@ The results provide descriptive rankings rather than investment recommendations.
 They highlight how countries commonly grouped together as “EM” can differ substantially
 in their structural profiles.
 
-Selected country discussions and a full ranking table are included in `report.pdf`.
+---
+
+## Report
+
+The full write-up for this Version 1 project is available here:
+
+📄 **[View exploratory report (PDF)](report.pdf)**
+
+> The report documents the methodology, assumptions, and country rankings
+> produced in this initial implementation.
 
 ---
 
@@ -114,9 +119,10 @@ structural_growth/
   py/                  # Python scripts (data pull & cleaning)
   research_r/          # R analysis, scoring, and reporting
   registry/            # Indicator lists, metadata, ISO3 mappings
-  docs/                
+  docs/
   data_raw/            # Raw data (not tracked)
   data_clean/          # Cleaned intermediate data (not tracked)
+
   data_final/          # Final analysis datasets (not tracked)
   outputs/             # Generated figures & tables (not tracked)
   renv.lock            # Pinned R dependencies
