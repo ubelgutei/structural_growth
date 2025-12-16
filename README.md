@@ -8,6 +8,8 @@ v1.
 
 <p align="center">
 <strong>
+<a href="#report">Report</a>
+•
 <a href="#overview">Overview</a>
 •
 <a href="#project-status">Project status</a>
@@ -17,10 +19,19 @@ v1.
 <a href="#results">Results</a>
 •
 <a href="#project-structure">Structure</a>
-•
-<a href="#report">Report</a>
 </strong>
 </p>
+
+---
+
+## Report
+
+The full write-up for this Version 1 project is available here:
+
+📄 **[View exploratory report (PDF)](report.pdf)**
+
+> The report documents the methodology, assumptions, and country rankings
+> produced in this initial implementation.
 
 ---
 
@@ -98,17 +109,6 @@ These choices are **simplifying assumptions** and are not claimed to be optimal.
 The results provide descriptive rankings rather than investment recommendations.
 They highlight how countries commonly grouped together as “EM” can differ substantially
 in their structural profiles.
-
----
-
-## Report
-
-The full write-up for this Version 1 project is available here:
-
-📄 **[View exploratory report (PDF)](report.pdf)**
-
-> The report documents the methodology, assumptions, and country rankings
-> produced in this initial implementation.
 
 ---
 
